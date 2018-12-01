@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using T1_Union_Find.Engine;
 
 namespace T1_Union_Find
 {
@@ -14,6 +15,16 @@ namespace T1_Union_Find
     {
         public static void Main(string[] args)
         {
+            Union_Find a = new Union_Find();
+            a.FillInput();
+            a.Printinput();
+            a.SortByUnions();
+            a.PrintUnions();
+
+            var a2 = new Union_Find_Algorithm();
+            a2.FillInput();
+            a2.PrintInput();
+            a2.PrintUnions();
             CreateWebHostBuilder(args).Build().Run();
         }
 
