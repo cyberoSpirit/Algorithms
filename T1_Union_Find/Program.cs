@@ -15,7 +15,7 @@ namespace T1_Union_Find
     {
         public static void Main(string[] args)
         {
-            Union_Find a = new Union_Find();
+            /*Union_Find a = new Union_Find();
             a.FillInput();
             a.Printinput();
             a.SortByUnions();
@@ -24,7 +24,19 @@ namespace T1_Union_Find
             var a2 = new Union_Find_Algorithm();
             a2.FillInput();
             a2.PrintInput();
-            a2.PrintUnions();
+            a2.PrintUnions();*/
+
+            var a3 = new Quick_Union();
+            a3.FillInput();
+            a3.PrintInput();
+            a3.PrintUnions();
+
+            var a4 = new Quick_Union_Improved();
+            a4.FillInput();
+            a4.PrintInput();
+            a4.PrintUnions();
+
+
             CreateWebHostBuilder(args).Build().Run();
         }
 
