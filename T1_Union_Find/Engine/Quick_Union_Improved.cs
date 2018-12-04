@@ -10,14 +10,16 @@ namespace T1_Union_Find.Engine
         public List<List<int>> TreesList { get { return CreateTreesListByIds(); } }
         private int[] elementsIds;
         private int[] treeSize;
-        private int elementsCount = 10;
+        private int elementsCount;
 
-        public Quick_Union_Improved()
+        public Quick_Union_Improved(int n)
         {
             Input = new List<KeyValuePair<int, int>>();
-            elementsCount = 10;
+            elementsCount = n;
             elementsIds = new int[elementsCount];
             treeSize = new int[elementsCount];
+            FillIds();
+            FillTreesSizes();
         }
 
         public void FillInput()
@@ -33,16 +35,13 @@ namespace T1_Union_Find.Engine
             Input.Add(new KeyValuePair<int, int>(7, 3));
         }
 
-        private void QuickUnion()
+       /* private void QuickUnion()
         {
-            FillIds();
-            FillTreesSizes();
-
             foreach (var elem in Input)
             {
                 AddLeaf(elem.Key, elem.Value);
             }
-        }
+        }*/
 
         private void FillIds()
         {
@@ -60,7 +59,7 @@ namespace T1_Union_Find.Engine
             }
         }
 
-        private void AddLeaf(int startElem, int newAddElem)
+        public void AddLeaf(int startElem, int newAddElem)
         {
             if (startElem == newAddElem) return;
 
@@ -133,7 +132,7 @@ namespace T1_Union_Find.Engine
         public void PrintUnions()
         {
             Console.WriteLine("Making unions...");
-            QuickUnion();
+           //QuickUnion();
             Printer.PrintUnions(TreesList, ", ");
         }
     }
