@@ -20,3 +20,5 @@ Improved (Weighted) Union
 		N	   lg N  lg N
 
 Percolation - Algorithm for checking if we can move from top cells to bottom if we can move only straight up-down and right-left and can not go by the diagonal.
+
+Binary search - search element in sorted array. 1 + lg N compares.
