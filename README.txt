@@ -22,3 +22,5 @@ Improved (Weighted) Union
 Percolation - Algorithm for checking if we can move from top cells to bottom if we can move only straight up-down and right-left and can not go by the diagonal.
 
 Binary search - search element in sorted array. 1 + lg N compares.
+
+TwoStack Dijkstra Algorithm - calculate expression. Everything should be in parentheses.

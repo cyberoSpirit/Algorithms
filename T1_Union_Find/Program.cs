@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
@@ -55,6 +56,8 @@ namespace T1_Union_Find
                 Console.WriteLine($"Element {element} is in position {number}");
             }
 
+            int number2 = TwoStackDijkstraAlgorithm.CalculateExp("(1+((2+3)*(4*5)))");
+            Console.WriteLine($"Element {number2}"); 
             CreateWebHostBuilder(args).Build().Run();
         }
 
