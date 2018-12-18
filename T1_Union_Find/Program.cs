@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -34,66 +35,25 @@ namespace T1_Union_Find
             var a4 = new Quick_Union_Improved();
             a4.FillInput();
             a4.PrintInput();
-            a4.PrintUnions();*/
+            a4.PrintUnions();
+            Stopwatch stopwatch = Stopwatch.StartNew(); //creates and start the instance of Stopwatch
+                                                        //your sample code
 
-            var percolation = new Percolation(10);
-            /*percolation.Open(0, 0);
-            percolation.Percolates();
-            percolation.Open(0, 2);
-            percolation.Percolates();
-            percolation.PrintMatrix();
-            percolation.Open(0, 4);
-            percolation.Percolates();
-            percolation.Open(1, 1);
-            percolation.Percolates();
-            percolation.Open(1, 2);
-            percolation.Percolates();
-            percolation.Open(1, 4);
-            percolation.Percolates();
-            percolation.PrintMatrix();
-            percolation.Open(1, 5);
-            percolation.Percolates();
-            percolation.Open(2, 1);
-            percolation.Percolates();
-            percolation.Open(2, 2);
-            percolation.Percolates();
-            percolation.Open(3, 0);
-            percolation.Percolates();
-            percolation.PrintMatrix();
-            percolation.Open(3, 2);
-            percolation.Percolates();
-            percolation.Open(3, 3);
-            percolation.Percolates();
-            percolation.Open(3, 4);
-            percolation.Percolates();
-            percolation.Open(4, 3);
-            percolation.Percolates();
-            percolation.Open(5, 2);
-            percolation.Percolates();
-            percolation.Open(5, 3);
-            percolation.Percolates();
-            percolation.PrintMatrix();*/
-            Random rnd = new Random();
-            int row;
-            int col;
-            bool a = true;
-            for (int i = 0; i < 30;++i)
+            stopwatch.Stop();
+            Console.WriteLine(stopwatch.ElapsedMilliseconds);
+            */
+
+            int[] arr = new int[] { 0, 1, 2, 3, 5, 6, 8, 9, 15, 17, 24, 27, 28, 29, 31, 37, 39, 40 };
+            int element = 38;
+            int number = BinarySearch.Search(arr, element);
+            if (number == -1)
             {
-                for (int j = 0; j < 30;++j)
-                {
-                    row = rnd.Next(0, 10);
-                    col = rnd.Next(0, 10);
-                    percolation.Open(row, col);
-                    if(a && percolation.Percolates())
-                    {
-                        Console.WriteLine("Matrix percolates!!!");
-                        percolation.PrintMatrix();
-                        a = false;
-                    }
-                }
+                Console.WriteLine($"Element {element} not found");
             }
-            percolation.Percolates();
-            percolation.PrintMatrix();
+            else
+            {
+                Console.WriteLine($"Element {element} is in position {number}");
+            }
 
             CreateWebHostBuilder(args).Build().Run();
         }
